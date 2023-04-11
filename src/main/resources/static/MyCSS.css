@@ -21,6 +21,7 @@ h1 {
     height:35px;
     border-bottom: 1px solid darkslateblue;
     margin: 0 35px 0 35px;
+    color:black;
 }
 .top-menustyle{
     float:right;
