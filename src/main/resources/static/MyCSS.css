@@ -1,0 +1,54 @@
+* {
+    font-family: "Apple LiGothic";
+    background-color: skyblue;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    color: darkslateblue;
+    padding: 0 0 0px 35px;
+    margin: 25px 0 10px 0;
+}
+#banner{
+    width:100%;
+    height:400px;
+    background-color: darkslateblue;
+    float:left;
+}
+#mainmenu{
+    margin: 53px 0 0 15px;
+}
+.menustyle{
+    padding: 5px 10px 5px 10px;
+    font-size: 20px;
+    border:none;
+    text-transform: uppercase;
+    border:2px solid #0000;
+
+}
+.menustyle:hover{
+    border:2px solid #000;
+    box-shadow: 2px 2px 2px #0000;
+    transition: .3s;
+    background-color: darkslateblue;
+    color:#ffff;
+}
+#box-body{
+    padding: 0px 0px 0px 0px;
+}
+#box-c2a{
+    padding: 0px 35px 0px 35px;
+}
+#c2a-left{
+    height:350px;
+    width:800px;
+    background-color: darkslateblue;
+    float:left;
+    margin: 35px 0 0 0;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
