@@ -4,7 +4,7 @@ public class Wish {
 
     private int wish_id;
     private int user_id;
-    private String list_id;
+    private int list_id;
     private String wish_name;
     private String wish_desc;
     private String wish_link;
@@ -15,7 +15,7 @@ public class Wish {
 
     }
 
-    public Wish(int wish_id, int user_id, String list_id , String wish_name, String wish_desc, String wish_link,
+    public Wish(int wish_id, int user_id, int list_id , String wish_name, String wish_desc, String wish_link,
                 double wish_price, boolean reserved) {
         this.wish_id = wish_id;
         this.user_id = user_id;
@@ -27,11 +27,11 @@ public class Wish {
         this.reserved = reserved;
     }
 
-    public String getList_id() {
+    public int getList_id() {
         return list_id;
     }
 
-    public void setList_id(String list_id) {
+    public void setList_id(int list_id) {
         this.list_id = list_id;
     }
 
