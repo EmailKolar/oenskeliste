@@ -13,15 +13,17 @@ public class UserService {
     @Autowired
     UserRepo userRepo;
 
-    public void register(User user){
-        userRepo.register(user);
+    public boolean register(User user){
+        return userRepo.register(user);
     }
 
     public boolean login(User user){
         return userRepo.login(user);
     }
 
-
+    public User setLoggedInUser(User user){
+        return userRepo.setLoggedInUser(user);
+    }
 
 
 

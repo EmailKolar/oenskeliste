@@ -1,6 +1,7 @@
 package com.example.oenskeliste.Repository;
 
 
+import com.example.oenskeliste.Model.User;
 import com.example.oenskeliste.Model.Wish;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,6 +20,11 @@ public class WishRepo {
         w.getWish_link(),w.getWish_price(),w.isReserved());
 
     }
+
+
+
+
+
     public void editWish(){
 
     }
