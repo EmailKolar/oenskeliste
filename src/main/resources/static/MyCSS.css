@@ -1,5 +1,5 @@
 * {
-    font-family: Avenir;
+    font-family: Verdana;
     background-color: skyblue;
 }
 
@@ -33,23 +33,24 @@ h1 {
     border: 2px solid #0000;
     text-transform: uppercase;
 }
-
 .top-menustyle:hover {
     border-bottom: 2px solid darkslateblue;
     background-color: darkslateblue;
     color: #ffff;
     transition: .2s;
 }
-
 #mainmenu {
-    margin: 65px 35px 0 15px;
+    margin: 80px 35px 0 15px;
     float: right;
-    padding: 0 0 0 0;
 }
 
+.form-menu{
+    width:auto;
+    float:left;
+}
 .menustyle {
     padding: 5px 10px 5px 10px;
-    font-size: 22px;
+    font-size: 20px;
     border: none;
     border: 2px solid #0000;
 
