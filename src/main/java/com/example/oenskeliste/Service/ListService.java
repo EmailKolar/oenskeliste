@@ -19,5 +19,8 @@ public class ListService {
         listRepo.createList(user,list);
     }
 
+    public List setCurrentList(List list, User user){
+        return listRepo.setCurrentList(list,user);
+    }
 
 }
