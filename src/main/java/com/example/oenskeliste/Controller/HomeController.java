@@ -1,6 +1,8 @@
 package com.example.oenskeliste.Controller;
 
+import com.example.oenskeliste.Model.List;
 import com.example.oenskeliste.Model.User;
+import com.example.oenskeliste.Service.ListService;
 import com.example.oenskeliste.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,10 @@ public class HomeController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    ListService listService;
+
+    static User loggedInUser;
 
     @GetMapping("/")
     public String index(){
@@ -31,16 +37,34 @@ public class HomeController {
 
     @PostMapping("/register")
     public String register(@ModelAttribute User user){//TODO find ud af hvordan vi gemmer dette user obj
-        userService.register(user);
-        return "redirect:/";
-    }
-    @PostMapping("/login")
-    public String login(@ModelAttribute User user){
-        if(userService.login(user)){
+        if(userService.register(user)){
+            loggedInUser = userService.setLoggedInUser(user);
             return "redirect:/";
         }else {
             return "redirect:/";
         }
+
+
+    }
+    @PostMapping("/login")
+    public String login(@ModelAttribute User user){
+        if(userService.login(user)){
+            loggedInUser = userService.setLoggedInUser(user);
+            return "redirect:/";
+        }else {
+            return "redirect:/";
+        }
+    }
+
+    @PostMapping("/listInitPage")
+    public String listInitPage(){
+        return "home/createList";
+    }
+
+    @PostMapping("/createList")
+    public String createList(@ModelAttribute List list){
+        listService.createList(loggedInUser,list);
+        return "home/editList";
     }
 
 
