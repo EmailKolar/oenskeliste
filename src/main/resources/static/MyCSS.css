@@ -10,80 +10,98 @@ h1 {
     padding: 0 0 0px 35px;
     margin: 35px 0 35px 0;
 }
-#banner{
-    width:100%;
-    height:400px;
+
+#banner {
+    width: 100%;
+    height: 400px;
     background-color: darkslateblue;
-    float:left;
+    float: left;
 
 }
-#top-menu{
-    height:35px;
+
+#top-menu {
+    height: 35px;
     border-bottom: 1px solid darkslateblue;
     margin: 0 35px 0 35px;
 }
-.top-menustyle{
-    float:right;
+
+.top-menustyle {
+    float: right;
     font-size: 15px;
     padding: 5px 10px 5px 10px;
-    border:none;
-    border:2px solid #0000;
+    border: none;
+    border: 2px solid #0000;
     text-transform: uppercase;
 }
+
 .top-menustyle:hover {
     border-bottom: 2px solid darkslateblue;
     background-color: darkslateblue;
     color: #ffff;
     transition: .2s;
 }
-#mainmenu{
+
+#mainmenu {
     margin: 65px 35px 0 15px;
-    float:right;
+    float: right;
     padding: 0 0 0 0;
 }
-.menustyle{
+
+.menustyle {
     padding: 5px 10px 5px 10px;
     font-size: 22px;
-    border:none;
-    border:2px solid #0000;
+    border: none;
+    border: 2px solid #0000;
 
 }
-.menustyle:hover{
-    border:2px solid darkslateblue;
+
+.menustyle:hover {
+    border: 2px solid darkslateblue;
     box-shadow: 2px 2px 2px darkslateblue;
     transition: .3s;
     background-color: #6a5db8;
-    color:#ffff;
+    color: #ffff;
 }
-#box-body{
+
+#box-body {
     padding: 0px 0px 0px 0px;
 }
-#box-c2a{
+
+#box-c2a {
     padding: 0px 35px 0px 35px;
 }
-#c2a-left{
-    height:350px;
-    width:48%;
+
+#c2a-left {
+    height: 350px;
+    width: 48%;
     background-color: darkslateblue;
-    float:left;
+    float: left;
     margin: 35px 4% 35px 0;
 }
-#c2a-right{
-    height:350px;
-    width:48%;
+
+#c2a-right {
+    height: 350px;
+    width: 48%;
     background-color: darkslateblue;
-    float:left;
+    float: left;
     margin: 35px 0 35px 0;
 }
-#box-footer1{
-    height:45px;
+
+#bottom-section {
+    height:auto;
+    width:100%;
+    background-color: darkslateblue;
+    float: left;
+    padding: 35px 0 35px 0;
+}
+#box-footer1 {
+    height:350%;
     width:48%;
     background-color: white;
     float:left;
 }
-.box-footer{
-    height:55px;
-    border: 2px solid darkslateblue;
+
+#box-footer2 {
 
 }
 a:-webkit-any-link {
