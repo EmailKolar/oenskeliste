@@ -15,6 +15,7 @@ public class UserRepo {
     @Autowired
     JdbcTemplate template;
     public void register(User user) {
+        //TODO TJEK OM BRUGER ER OPRETTET I FORVEJEN!!!
         String sql = "INSERT INTO wishlist.user (user_id, user_name, password) " +
                 "VALUES (?, ?, ?)";
         template.update(sql, user.getUser_id(), user.getUser_name(), user.getPassword());
