@@ -21,7 +21,9 @@ public class UserService {
         return userRepo.login(user);
     }
 
-
+    public User setLoggedInUser(User user){
+        return userRepo.setLoggedInUser(user);
+    }
 
 
 
