@@ -75,6 +75,17 @@ h1 {
     float:left;
     margin: 35px 0 35px 0;
 }
+#box-footer1{
+    height:45px;
+    width:48%;
+    background-color: white;
+    float:left;
+}
+.box-footer{
+    height:55px;
+    border: 2px solid darkslateblue;
+
+}
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
