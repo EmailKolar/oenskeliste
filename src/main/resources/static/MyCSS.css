@@ -89,20 +89,24 @@ h1 {
 
 #bottom-section {
     height:auto;
-    width:100%;
+    width:95%;
     background-color: darkslateblue;
     float: left;
-    padding: 35px 0 35px 0;
+    padding: 35px 35px 35px 35px;
+
 }
-#box-footer1 {
-    height:350%;
-    width:48%;
-    background-color: white;
+#box-footer-left {
+    height:250px;
+    width: 48%;
+    background-color: #6a5db8;
     float:left;
+    margin: 0 4% 0 0;
 }
-
-#box-footer2 {
-
+#box-footer-right {
+    height:250px;
+    width: 48%;
+    background-color: #6a5db8;
+    float:left;
 }
 a:-webkit-any-link {
     color: -webkit-link;
