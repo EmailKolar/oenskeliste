@@ -2,8 +2,10 @@ package com.example.oenskeliste.Controller;
 
 import com.example.oenskeliste.Model.List;
 import com.example.oenskeliste.Model.User;
+import com.example.oenskeliste.Model.Wish;
 import com.example.oenskeliste.Service.ListService;
 import com.example.oenskeliste.Service.UserService;
+import com.example.oenskeliste.Service.WishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,11 @@ public class HomeController {
 
     @Autowired
     ListService listService;
+    @Autowired
+    WishService wishService;
 
     static User loggedInUser;
+    static List currentList;
 
     @GetMapping("/")
     public String index(){
@@ -64,8 +69,16 @@ public class HomeController {
     @PostMapping("/createList")
     public String createList(@ModelAttribute List list){
         listService.createList(loggedInUser,list);
+        currentList = listService.setCurrentList(list,loggedInUser);
         return "home/editList";
     }
 
+    @PostMapping("/addWish")
+    public String addWish(@ModelAttribute Wish wish){
+        wish.setUser_id(loggedInUser.getUser_id());
+        wish.setList_id(currentList.getList_id());
+        wishService.addWish(wish);
+        return "home/editList";
+    }
 
 }
