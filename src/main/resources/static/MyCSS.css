@@ -108,6 +108,25 @@ h1 {
     background-color: #6a5db8;
     float:left;
 }
+.footer {
+    padding-left: 10%;
+    background-color: #6a5db8;
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 1%;
+}
+.contact-style {
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+    border: 1px solid;
+}
+.contact-style:hover{
+    border: 1px solid darkslateblue;
+    box-shadow: 1px 1px 1px darkslateblue;
+    transition: .3s;
+    background-color: palevioletred;
+    color: #ffff;
+}
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
