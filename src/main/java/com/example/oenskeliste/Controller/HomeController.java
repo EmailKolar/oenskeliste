@@ -40,6 +40,11 @@ public class HomeController {
         return "home/login";
     }
 
+    @PostMapping("/loadGuest")
+    public String goToGuest(){
+        return "home/guest";
+    }
+
     @PostMapping("/register")
     public String register(@ModelAttribute User user){//TODO find ud af hvordan vi gemmer dette user obj
         if(userService.register(user)){
