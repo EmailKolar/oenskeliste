@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wish list</title>
+    <title>Wish List</title>
     <link rel="icon" type="image/x-icon" href="gift-solid.svg">
     <link rel="stylesheet" type="text/css" href="MyCSS.css">
 </head>
@@ -22,8 +22,9 @@
 
 <div id="box-header">
 
-    <h1 style="float:left;">Make a Wish(list)</h1>
-
+    <a href="#">
+    <h1 style="float:left;">Make a Wish(List)</h1>
+    </a>
     <div id="mainmenu">
         <form class="form-menu" action="/" method="post">
             <button class="menustyle">Home</button>
@@ -31,7 +32,6 @@
         <form class="form-menu" action="/listInitPage" method="post">
             <button class="menustyle">Look at Wishlist</button>
         </form>
-
     </div>
 
 </div>
@@ -40,22 +40,31 @@
 
     <div id="banner">
 
-        <img src="gave_img.jpg" width="100%" height="400px">
+        <img src="gave_banner.jpg" width="100%" height="400px">
 
     </div>
 
-    <div id="box-c2a">
+    <div class="button-container">
+        <a href="#" id="button1" class="cta-button">
+            <img src="C2A_CreateAList.jpg" alt="Create a List" class="cta-img"
+                 style="width:700px; height:400px; margin:35px 38px 35px 0;border-bottom: 6px solid #2c2656;">
+            <img src="C2A_CreateAList_Hover.jpg" alt="Create a List" class="cta-img-hover"
+                 style="width:700px; height:400px; margin:35px 38px 35px 0;border-bottom: 6px solid #2c2656;">
+        </a>
 
-        <div id="c2a-left">
-            <img src="C2A_CreateAList.jpg" width="1314px" height="700px">
-        </div>
-
-        <div id="c2a-right">
-
-
-        </div>
-
+        <a href="#" id="button2" class="cta-button">
+            <img src="C2A_Share.jpg" alt="Create a List" class="cta-img"
+                 style="width:700px; height:400px; margin:35px 0 35px 0;border-bottom: 6px solid #2c2656;">
+            <img src="C2A_Share_hover.jpg" alt="Create a List" class="cta-img-hover"
+                 style="width:700px; height:400px; margin:35px 0 35px 0;border-bottom: 6px solid #2c2656;">
+        </a>
     </div>
+
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -74,6 +83,10 @@
         <img src="This street gogle mops.JPG" width="100%" height="100%">
     </div>
 
+</div>
+
+<div id="created-by-section" style="height: auto; width:100%;float:left;text-align: center; padding: 1px 0 1px 0;">
+    <p style="font-size: 12px; color:#6a5db8">Created by: Lauritz, Emilz, Mathias & Mathias</p>
 </div>
 
 </body>
