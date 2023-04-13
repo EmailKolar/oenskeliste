@@ -21,7 +21,7 @@ public class WishRepo {
                 "wish_price, reserved) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         template.update(sql,w.getWish_id(),w.getUser_id(),w.getList_id(),w.getWish_name(),w.getWish_desc(),
         w.getWish_link(),w.getWish_price(),w.isReserved());
-
+        System.out.println(sql);
     }
 
 

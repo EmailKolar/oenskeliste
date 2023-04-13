@@ -47,7 +47,7 @@ public class HomeController {
 
     @PostMapping("/loadGuest")
     public String goToGuest(){
-        return "home/guest";
+        return "home/loggedIn";
     }
 
     @PostMapping("/register")
@@ -64,11 +64,15 @@ public class HomeController {
     @PostMapping("/login")
     public String login(@ModelAttribute User user, HttpSession httpSession){
         if(userService.login(user)){
-            loggedInUser = userService.setLoggedInUser(user);
-            httpSession.setAttribute("username",user.getUser_name());
-            return "redirect:/";
+
+            user = userService.setLoggedInUser(user);
+            httpSession.setAttribute("user",user);
+//            User seshUser = (User) httpSession.getAttribute("user");
+//            System.out.println(seshUser.getUser_id());
+            return "home/loggedIn";
         }else {
-            return "redirect:/";
+            System.out.println("DEBUG: login credentials not correct");
+            return "home/errorPage";
         }
     }
 
