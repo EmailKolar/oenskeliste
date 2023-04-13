@@ -6,6 +6,7 @@ import com.example.oenskeliste.Model.Wish;
 import com.example.oenskeliste.Service.WListService;
 import com.example.oenskeliste.Service.UserService;
 import com.example.oenskeliste.Service.WishService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +31,8 @@ public class HomeController {
     static WList currentWList;
 
     @GetMapping("/")
-    public String index(){
+    public String index(HttpSession session){
+        System.out.println(session.getAttribute("username"));
         return "home/index";
     }
 
@@ -60,9 +62,10 @@ public class HomeController {
 
     }
     @PostMapping("/login")
-    public String login(@ModelAttribute User user){
+    public String login(@ModelAttribute User user, HttpSession httpSession){
         if(userService.login(user)){
             loggedInUser = userService.setLoggedInUser(user);
+            httpSession.setAttribute("username",user.getUser_name());
             return "redirect:/";
         }else {
             return "redirect:/";
