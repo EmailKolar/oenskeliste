@@ -104,5 +104,21 @@ public class HomeController {
 
         return "home/editList";
     }
+    @PostMapping("/inputListId")
+    public String inputListId(@ModelAttribute WList list, Model model){
+
+
+        List<Wish> wishes = wishService.fetchList(list);
+        model.addAttribute("wishes",wishes);
+        return "home/viewList";
+    }
+
+    @PostMapping("/showList")
+    public String showListPage( ){
+
+        return "home/viewList";
+    }
+
+
 
 }
