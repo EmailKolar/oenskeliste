@@ -27,7 +27,7 @@ public class HomeController {
     @Autowired
     WishService wishService;
 
-    static User loggedInUser;
+//    static User loggedInUser;
     static WList currentWList;
 
     @GetMapping("/")
@@ -51,12 +51,13 @@ public class HomeController {
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute User user){//TODO find ud af hvordan vi gemmer dette user obj
+    public String register(@ModelAttribute User user, HttpSession session){//TODO måske ikke login ved register
         if(userService.register(user)){
-            loggedInUser = userService.setLoggedInUser(user);
-            return "redirect:/";
+            user = userService.setLoggedInUser(user);
+            session.setAttribute("user",user);
+            return "home/loggedIn";
         }else {
-            return "redirect:/";
+            return "home/errorPage";
         }
 
 
@@ -82,15 +83,19 @@ public class HomeController {
     }
 
     @PostMapping("/createList")
-    public String createList(@ModelAttribute WList WList){
-        WListService.createList(loggedInUser, WList);
-        currentWList = WListService.setCurrentList(WList,loggedInUser);
+    public String createList(@ModelAttribute WList WList, HttpSession session){
+        User user = (User) session.getAttribute("user");
+
+        WListService.createList(user, WList);
+        currentWList = WListService.setCurrentList(WList,user);
         return "home/editList";
     }
 
     @PostMapping("/addWish")
-    public String addWish(@ModelAttribute Wish wish, Model model){
-        wish.setUser_id(loggedInUser.getUser_id());
+    public String addWish(@ModelAttribute Wish wish, Model model, HttpSession session){
+        User user = (User) session.getAttribute("user");
+        wish.setUser_id(user.getUser_id());
+
         wish.setList_id(currentWList.getList_id());
         wishService.addWish(wish);
 
