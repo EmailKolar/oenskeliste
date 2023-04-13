@@ -8,9 +8,12 @@ import com.example.oenskeliste.Service.UserService;
 import com.example.oenskeliste.Service.WishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -79,10 +82,14 @@ public class HomeController {
     }
 
     @PostMapping("/addWish")
-    public String addWish(@ModelAttribute Wish wish){
+    public String addWish(@ModelAttribute Wish wish, Model model){
         wish.setUser_id(loggedInUser.getUser_id());
         wish.setList_id(currentWList.getList_id());
         wishService.addWish(wish);
+
+        List<Wish> wishes = wishService.fetchList(currentWList);
+        model.addAttribute("wishes",wishes);
+
         return "home/editList";
     }
 

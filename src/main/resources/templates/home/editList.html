@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,6 +7,32 @@
 <body>
 
 <div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>desc</th>
+            <th>price</th>
+            <th>link</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="wish: ${wishes}">
+            <td th:text="${wish.wish_name}"/>
+            <td th:text="${wish.wish_desc}"/>
+            <td th:text="${wish.wish_price}"/>
+            <td th:text="${wish.wish_link}"/>
+<!--            <td>-->
+<!--                <a th:href="@{'/deleteOne/'+${song.id}}">-->
+<!--                    <button class="btn-deleteOne" id="btn-deleteOne">Delete song</button></a>-->
+<!--                <a th:href="@{'/updateOne/'+${song.id}}">-->
+<!--                    <button class="btn-updateOne" id="btn-updateOne">Update song details</button></a>-->
+<!--            </td>-->
+        </tr>
+        </tbody>
+    </table>
 
 </div>
 
