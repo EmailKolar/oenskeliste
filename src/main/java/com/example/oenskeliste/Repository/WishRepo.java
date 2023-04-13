@@ -1,10 +1,13 @@
 package com.example.oenskeliste.Repository;
 
+import java.util.List;
 
-import com.example.oenskeliste.Model.User;
+import com.example.oenskeliste.Model.WList;
 import com.example.oenskeliste.Model.Wish;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -32,7 +35,11 @@ public class WishRepo {
 
     }
 
-    public void fetchList(){
+    public List<Wish> fetchList(WList list){
+        String sql = "SELECT * FROM wishlist.wish WHERE list_id = ?";
+        RowMapper<Wish> rowMapper = new BeanPropertyRowMapper<>(Wish.class);
+        return template.query(sql,rowMapper);
+
 
     }
 

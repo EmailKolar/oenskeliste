@@ -1,9 +1,9 @@
 package com.example.oenskeliste.Controller;
 
-import com.example.oenskeliste.Model.List;
+import com.example.oenskeliste.Model.WList;
 import com.example.oenskeliste.Model.User;
 import com.example.oenskeliste.Model.Wish;
-import com.example.oenskeliste.Service.ListService;
+import com.example.oenskeliste.Service.WListService;
 import com.example.oenskeliste.Service.UserService;
 import com.example.oenskeliste.Service.WishService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +19,12 @@ public class HomeController {
     UserService userService;
 
     @Autowired
-    ListService listService;
+    WListService WListService;
     @Autowired
     WishService wishService;
 
     static User loggedInUser;
-    static List currentList;
+    static WList currentWList;
 
     @GetMapping("/")
     public String index(){
@@ -72,16 +72,16 @@ public class HomeController {
     }
 
     @PostMapping("/createList")
-    public String createList(@ModelAttribute List list){
-        listService.createList(loggedInUser,list);
-        currentList = listService.setCurrentList(list,loggedInUser);
+    public String createList(@ModelAttribute WList WList){
+        WListService.createList(loggedInUser, WList);
+        currentWList = WListService.setCurrentList(WList,loggedInUser);
         return "home/editList";
     }
 
     @PostMapping("/addWish")
     public String addWish(@ModelAttribute Wish wish){
         wish.setUser_id(loggedInUser.getUser_id());
-        wish.setList_id(currentList.getList_id());
+        wish.setList_id(currentWList.getList_id());
         wishService.addWish(wish);
         return "home/editList";
     }
