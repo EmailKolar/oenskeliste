@@ -1,17 +1,17 @@
 package com.example.oenskeliste.Model;
 
-public class List {
+public class WList {
 
     private int list_id;
     private int user_id;
     private String list_name;
 
-    public List(int list_id, int user_id, String list_name) {
+    public WList(int list_id, int user_id, String list_name) {
         this.list_id = list_id;
         this.user_id = user_id;
         this.list_name = list_name;
     }
-    public List(){
+    public WList(){
 
     }
 
