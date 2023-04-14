@@ -184,6 +184,9 @@ table {
     background-color: #8b483d;
     transition: .3s;
 }
+input{
+    background-color: #9b92cf;
+}
 .SearchButton{
     margin: 0 35px 0 10px;
     background-color: #3d8b48;
