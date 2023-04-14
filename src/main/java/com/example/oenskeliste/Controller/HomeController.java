@@ -84,11 +84,15 @@ public class HomeController {
     }
 
     @PostMapping("/createList")
-    public String createList(@ModelAttribute WList WList, HttpSession session){
+    public String createList(@ModelAttribute WList WList, HttpSession session, Model model){
         User user = (User) session.getAttribute("user");
 
         WListService.createList(user, WList);
         currentWList = WListService.setCurrentList(WList,user);
+
+        WList wListForName = WListService.fetchListForName(currentWList.getList_id());
+        model.addAttribute("list_name",wListForName.getList_name());
+
         return "home/editList";
     }
 
