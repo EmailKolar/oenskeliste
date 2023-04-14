@@ -140,10 +140,18 @@ a:-webkit-any-link {
     border: 2px solid darkslateblue;
     padding: 35px 15px 35px 15px;
     width: 40%;
-    margin: 0 0 0 35px;
+    margin: 0 0 35px 35px;
     text-align: center;
 }
 #form-label-styling{
     background-color: #6a5db8;
     color:white;
+}
+#table_design{
+    background-color: #6a5db8;
+    border: 2px solid darkslateblue;
+    padding: 35px 15px 35px 15px;
+    width: 40%;
+    margin: 0 0 35px 35px;
+    text-align: center;
 }
