@@ -142,6 +142,7 @@ a:-webkit-any-link {
     width: 40%;
     margin: 0 0 35px 35px;
     text-align: left;
+    height: 20px;
 }
 .form-label-styling{
     background-color: #6a5db8;
