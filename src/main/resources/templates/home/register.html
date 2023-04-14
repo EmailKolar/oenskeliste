@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register</title>
     <link rel="stylesheet" type="text/css" href="MyCSS.css">
 </head>
 <body>
 <h1>Register user</h1>
-<div class="button-container" id="register-form-styling">
-  <form style="background-color:#6a5db8 " action="/register" method="post">
-    <label class="form-label-styling">Enter username:</label>
-    <input type="text" name="user_name" style="margin-bottom: 6px;">
-      <br>
-    <label class="form-label-styling">Enter password:</label>
-    <input style="margin-left: 4px" type="text" name="password">
-      <br>
-    <input class="register-button" type="submit" value="Register">
-  </form>
-</div>
+<div style="float: left" class="button-container" id="register-form-styling">
+    <form style="background-color:#6a5db8 " action="/register" method="post">
+        <label class="form-label-styling">Enter username:</label>
+        <input type="text" name="user_name" style="margin-bottom: 6px;">
+        <br>
+        <label class="form-label-styling">Enter password:</label>
+        <input style="margin-left: 4px" type="text" name="password">
+        <br>
+    </form>
 
+</div>
+<div style="width: 100%; float: left;margin-left: 35px">
+    <input style="float: left" class="register-button" type="submit" value="Register">
+</div>
 </body>
 </html>
