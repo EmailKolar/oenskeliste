@@ -10,14 +10,13 @@
 <h1>Find wish list</h1>
 <div id="form_styling">
     <form action="/inputListId" method="post" style="background-color: #6a5db8">
-        <label id="form-label-styling">Enter list ID</label>
+        <label class="form-label-styling">Enter list ID</label>
         <input type="text" id="list_id" name="list_id"/>
         <br>
     </form>
 </div>
 <div id="table_design">
 <table>
-    <thead>
     <tr>
         <th>name</th>
         <th>desc</th>
@@ -35,6 +34,13 @@
     </tr>
     </tbody>
 </table>
+
+</div>
+
+<div>
+    <form action="/" method="get" style="background-color: #6a5db8">
+        <input id="GoBackButton" type="submit" value="Go back">
+    </form>
 </div>
 </body>
 </html>
