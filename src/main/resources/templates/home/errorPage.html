@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        #errorBox{
+            color: darkblue;
+            background-image: linear-gradient(darkcyan,white);
+            width: 400px;
+            margin-bottom: 0;
+            border: 1px solid darkblue;
+            padding: 7px 10px 5px;
+        }
+        #goBackBox{
+            color: darkblue;
+            background-image: linear-gradient(darkcyan,white);
+            width: 70px;
+            margin-bottom: 0;
+            border: 1px solid darkblue;
+            padding: 7px 10px 5px;
+        }
+
+    </style>
 
 </head>
 <body>
-<p>Error</p>
+
+<div id="errorBox">
+    <h1>Oops something went wrong</h1>
+    <p>you may have entered your user credentials incorrectly</p>
+    <p>you may have tried to register a username already in use</p>
+</div>
+<br>
+
+<div id="goBackBox">
+    <form action="/" method="get">
+        <input type="submit" value="go back">
+    </form>
+</div>
+
 </body>
 </html>
