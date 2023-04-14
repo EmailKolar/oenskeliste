@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -99,8 +100,11 @@ public class HomeController {
         wish.setList_id(currentWList.getList_id());
         wishService.addWish(wish);
 
-        List<Wish> wishes = wishService.fetchList(currentWList);
+        List<Wish> wishes = wishService.fetchList(currentWList.getList_id());
         model.addAttribute("wishes",wishes);
+
+        WList wList = WListService.fetchListForName(currentWList.getList_id());
+        model.addAttribute("list_name",wList.getList_name());
 
         return "home/editList";
     }
@@ -108,7 +112,7 @@ public class HomeController {
     public String inputListId(@ModelAttribute WList list, Model model){
 
 
-        List<Wish> wishes = wishService.fetchList(list);
+        List<Wish> wishes = wishService.fetchList(list.getList_id());
         model.addAttribute("wishes",wishes);
         return "home/viewList";
     }
@@ -119,6 +123,25 @@ public class HomeController {
         return "home/viewList";
     }
 
+    @PostMapping("/viewMyWishlists")
+    public String viewMyWishlists(HttpSession session, Model model){
+        User user = (User) session.getAttribute("user");
+
+        List<WList> lists = WListService.fetchLists(user);
+        model.addAttribute("lists", lists);
+        return "home/showMyLists";
+    }
+    @GetMapping("/editWishlist/{list_id}")
+    public String editWishlist(@PathVariable("list_id")int list_id, HttpSession session, Model model){
+        System.out.println(list_id);
+
+        WList wList = WListService.fetchListForName(list_id);
+        model.addAttribute("list_name",wList.getList_name());
+
+        List<Wish> wishes = wishService.fetchList(list_id);
+        model.addAttribute("wishes",wishes);
+        return "home/editList";
+    }
 
 
 }
