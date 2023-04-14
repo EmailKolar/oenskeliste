@@ -182,6 +182,20 @@ table {
     background-color: #8b483d;
     transition: .3s;
 }
+.FindButton{
+    margin: 35px 35px 0 0;
+    background-color: #3d8b48;
+    width: auto;
+    color: white;
+    padding: 6px 25px 6px 25px;
+    float:left;
+    border: 1px solid white;
+    font-size: 15px;
+}
+.FindButton:hover{
+    background-color: #5db86a;
+    transition: .3s;
+}
 #register-form-styling{
     background-color: #6a5db8;
     border: 2px solid darkslateblue;
