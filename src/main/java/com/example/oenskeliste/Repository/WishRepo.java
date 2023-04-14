@@ -35,10 +35,10 @@ public class WishRepo {
 
     }
 
-    public List<Wish> fetchList(WList list){
+    public List<Wish> fetchList(int list_id){
         String sql = "SELECT * FROM wishlist.wish WHERE list_id = ?";
         RowMapper<Wish> rowMapper = new BeanPropertyRowMapper<>(Wish.class);
-        return template.query(sql,rowMapper,list.getList_id());
+        return template.query(sql,rowMapper,list_id);
 
 
     }
