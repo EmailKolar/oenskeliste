@@ -156,12 +156,13 @@ a:-webkit-any-link {
     text-align: center;
 }
 th{
-    background-color: #6a5db8;
-    border: 2px solid darkslateblue;
-    padding: 35px 15px 35px 15px;
-    width: 40%;
-    margin: 0 0 0 35px;
-}
+     background-color: #6a5db8;
+     color: white;
+     padding: 6px 25px 6px 25px;
+     text-transform: capitalize;
+     border-right: 2px solid darkslateblue;
+     text-align: center;
+ }
 .register-button {
     display: flex;
     justify-content: space-between;
