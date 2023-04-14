@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
+
 </head>
 <body>
 
 <div>
 
-  <form action="/createList" method="post">
-    <label>enter name of the WList you want to create</label>
-    <input type="text" name="list_name">
-  </form>
+    <h1>Make a list</h1>
 
+    <div class="form_styling">
+        <form action="/createList" method="post" style="background-color: #6a5db8;">
+            <label class="form-label-styling">Enter name of the Wish List you want to create: </label>
+            <input type="text" name="list_name" style="background-color: #9b92cf; border: 2px solid darkslateblue;">
+        </form>
+    </div>
 
 </div>
 

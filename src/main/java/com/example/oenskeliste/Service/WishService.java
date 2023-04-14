@@ -19,8 +19,8 @@ public class WishService {
     }
 
 
-    public List<Wish> fetchList(WList wList){
-        return wishRepo.fetchList(wList);
+    public List<Wish> fetchList(int list_id){
+        return wishRepo.fetchList(list_id);
     }
 
 }
