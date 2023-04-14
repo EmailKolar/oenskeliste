@@ -147,5 +147,10 @@ public class HomeController {
         return "home/editList";
     }
 
+    @PostMapping("/logOut")
+    public String logOut(HttpSession session){
+        session.invalidate();
+        return "home/index";
+    }
 
 }
