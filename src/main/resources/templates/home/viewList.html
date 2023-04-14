@@ -3,33 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>View List</title>
-  <link rel="icon" type="image/x-icon" href="gift-solid.svg">
-  <link rel="stylesheet" type="text/css" href="MyCSS.css">
+    <link rel="icon" type="image/x-icon" href="gift-solid.svg">
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
 </head>
 <body>
-<form action="/inputListId" method="post">
-  <label>Enter list ID</label>
-  <input type="text" id="list_id" name="list_id"/>
-  <br>
-</form>
+<h1>Find wish list</h1>
+<div id="form_styling">
+    <form action="/inputListId" method="post" style="background-color: #6a5db8">
+        <label class="form-label-styling">Enter list ID</label>
+        <input type="text" id="list_id" name="list_id"/>
+        <br>
+    </form>
+</div>
+<div id="table_design">
 <table>
-  <thead>
-  <tr>
-    <th>name</th>
-    <th>desc</th>
-    <th>price</th>
-    <th>link</th>
+    <tr>
+        <th>name</th>
+        <th>desc</th>
+        <th>price</th>
+        <th>link</th>
 
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="wish: ${wishes}">
-    <td th:text="${wish.wish_name}"/>
-    <td th:text="${wish.wish_desc}"/>
-    <td th:text="${wish.wish_price}"/>
-    <td th:text="${wish.wish_link}"/>
-  </tr>
-  </tbody>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="wish: ${wishes}">
+        <td th:text="${wish.wish_name}"/>
+        <td th:text="${wish.wish_desc}"/>
+        <td th:text="${wish.wish_price}"/>
+        <td th:text="${wish.wish_link}"/>
+    </tr>
+    </tbody>
 </table>
+
+</div>
+
+<div>
+    <form action="/" method="get" style="background-color: #6a5db8">
+        <input id="GoBackButton" type="submit" value="Go back">
+    </form>
+</div>
 </body>
 </html>

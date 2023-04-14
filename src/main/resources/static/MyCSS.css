@@ -138,16 +138,24 @@ a:-webkit-any-link {
 #form_styling{
     background-color: #6a5db8;
     border: 2px solid darkslateblue;
-    padding: 35px 15px 35px 15px;
+    padding: 20px 35px 20px 35px;
     width: 40%;
-    margin: 0 0 0 35px;
-    text-align: center;
+    margin: 0 0 35px 35px;
+    text-align: left;
 }
 .form-label-styling{
     background-color: #6a5db8;
     color:white;
 }
-#register-form-styling{
+#table_design{
+    background-color: #6a5db8;
+    border: 2px solid darkslateblue;
+    padding: 35px 35px 35px 35px;
+    width: 40%;
+    margin: 0 0 0 35px;
+    text-align: center;
+}
+th{
     background-color: #6a5db8;
     border: 2px solid darkslateblue;
     padding: 35px 15px 35px 15px;
@@ -161,6 +169,30 @@ a:-webkit-any-link {
     margin-top: 14px;
     background-color: #5d7eb8;
     color: white;
+    color: white;
+    padding: 6px 25px 6px 25px;
+    text-transform: capitalize;
+    border-right: 2px solid darkslateblue;
+    text-align: center;
+}
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 0;
+}
+#GoBackButton{
+    margin: 35px 35px 0 35px;
+    background-color: #b86a5d;
+    width: auto;
+    color: white;
+    padding: 6px 25px 6px 25px;
+    float:left;
+    border: 1px solid white;
+    font-size: 15px;
+}
+#GoBackButton:hover{
+    background-color: #8b483d;
+    transition: .3s;
 }
 .register-button:hover{
     transition: .2s;
