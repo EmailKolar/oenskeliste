@@ -10,8 +10,12 @@
 <h1>Find wish list</h1>
 <div id="form_styling">
     <form action="/inputListId" method="post" style="background-color: #6a5db8">
-        <label class="form-label-styling">Enter list ID</label>
-        <input type="text" id="list_id" name="list_id"/>
+        <label class="form-label-styling">Enter list ID: </label>
+        <input type="text" id="list_id" name="list_id" style="float:left;"/>
+
+        <form style="background-color:#6a5db8 " action="/" method="post">
+            <input class="SearchButton" type="submit" value="Search">
+        </form>
         <br>
     </form>
 </div>
@@ -42,9 +46,9 @@
         <input id="GoBackButton" type="submit" value="Go back">
     </form>
 
-        <form style="background-color:#6a5db8 " action="/" method="post">
-            <input class="FindButton" type="submit" value="Find">
-        </form>
+    <form style="background-color:#6a5db8 " action="/" method="post">
+        <input class="StandardKnap" type="submit" value="Standard knap">
+    </form>
 </div>
 </body>
 </html>
