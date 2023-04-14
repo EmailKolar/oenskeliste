@@ -143,7 +143,27 @@ a:-webkit-any-link {
     margin: 0 0 0 35px;
     text-align: center;
 }
-#form-label-styling{
+.form-label-styling{
     background-color: #6a5db8;
     color:white;
+}
+#register-form-styling{
+    background-color: #6a5db8;
+    border: 2px solid darkslateblue;
+    padding: 35px 15px 35px 15px;
+    width: 40%;
+    margin: 0 0 0 35px;
+}
+.register-button {
+    display: flex;
+    justify-content: space-between;
+    float:left;
+    margin-top: 14px;
+    background-color: #5d7eb8;
+    color: white;
+}
+.register-button:hover{
+    transition: .2s;
+    background-color: darkslateblue;
+    color: #ffff;
 }
