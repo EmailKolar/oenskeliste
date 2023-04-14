@@ -142,6 +142,7 @@ a:-webkit-any-link {
     width: 40%;
     margin: 0 0 35px 35px;
     text-align: left;
+    height: 20px;
 }
 .form-label-styling{
     background-color: #6a5db8;
@@ -183,6 +184,9 @@ table {
 #GoBackButton:hover{
     background-color: #8b483d;
     transition: .3s;
+}
+input{
+    background-color: #9b92cf;
 }
 .SearchButton{
     margin: 0 35px 0 10px;
