@@ -8,6 +8,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository
 public class WListRepo {
@@ -33,6 +35,24 @@ public class WListRepo {
         return currentWList;
 
     }
+
+    public List<WList> fetchLists (User user){
+        String sql = "SELECT * FROM wishlist.list WHERE user_id = ?";
+        RowMapper<WList> rowMapper = new BeanPropertyRowMapper<>(WList.class);
+        List<WList> lists = template.query(sql, rowMapper, user.getUser_id());
+
+        return lists;
+
+    }
+
+    public WList fetchListForName(int list_id){
+        String sql = "SELECT * FROM wishlist.list WHERE list_id = ?";
+        RowMapper<WList> rowMapper = new BeanPropertyRowMapper<>(WList.class);
+        WList wlist = template.queryForObject(sql, rowMapper, list_id);
+        return wlist;
+    }
+
+
 
 
 }

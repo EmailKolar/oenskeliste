@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table>
+  <thead>
+  <tr>
+    <th>name</th>
+    <th>share code</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="list: ${lists}">
+    <td>
+      <a th:href="@{'/editWishlist/'+${list.list_id}}">
+        <button ><span th:text="${list.list_name}" /></button></a>
+    </td>
+    <td th:text="${list.list_id}"/>
+
+
+  </tr>
+  </tbody>
+
+</table>
+
+</body>
+</html>
