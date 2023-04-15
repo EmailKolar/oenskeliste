@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="MyCSS.css">
+
 </head>
 <body>
 
+<h1>Your wish lists</h1>
+<p style="margin-left:35px;">Click on the name of the list you want to see.</p>
 
-<table>
+<table style="width:60%;margin-left:35px; float:left;border:1px solid darkslateblue;">
   <thead>
   <tr>
     <th>name</th>
@@ -15,19 +19,25 @@
 
   </tr>
   </thead>
-  <tbody>
-  <tr th:each="list: ${lists}">
+  <tbody class="tbody-form-style">
+  <tr th:each="list: ${lists}" class="tr-formstyle">
     <td>
       <a th:href="@{'/editWishlist/'+${list.list_id}}">
-        <button ><span th:text="${list.list_name}" /></button></a>
+        <button  class="yourListNames">
+          <span th:text="${list.list_name}" /></button></a>
     </td>
-    <td th:text="${list.list_id}"/>
+    <td th:text="${list.list_id}" style="text-align: center;"/>
 
 
   </tr>
   </tbody>
-
 </table>
 
+<div style="float:left;width:100%;">
+  <form action="/loadGuest" method="post">
+    <input type="submit" id="GoBackButton" value="go back"
+           style="float: left; margin-left: 35px;"/>
+  </form>
+</div>
 </body>
 </html>

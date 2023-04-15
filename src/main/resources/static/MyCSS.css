@@ -158,6 +158,12 @@ a:-webkit-any-link {
     margin: 0 0 0 35px;
     text-align: center;
 }
+.tbody-form-style{
+    border:1px solid darkred;
+}
+.tr-formstyle{
+    border-bottom:1px dotted darkred;
+}
 th{
      background-color: #6a5db8;
      color: white;
@@ -235,4 +241,16 @@ input{
     transition: .2s;
     background-color: darkslateblue;
     color: #ffff;
+}
+.yourListNames{
+    border: 1px solid darkslateblue;
+    font-size: 15px;
+    padding: 5px 15px 5px 15px;
+    margin: 5px 15px 5px 15px;
+}
+.yourListNames:hover{
+    border: 1px solid white;
+    font-size: 15px;
+    padding: 5px 15px 5px 15px;
+    color:white;
 }
