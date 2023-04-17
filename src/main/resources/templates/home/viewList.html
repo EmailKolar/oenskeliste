@@ -31,10 +31,10 @@
         </thead>
         <tbody>
         <tr th:each="wish: ${wishes}">
-            <td th:text="${wish.wish_name}"/>
-            <td th:text="${wish.wish_desc}"/>
-            <td th:text="${wish.wish_price}"/>
-            <td th:text="${wish.wish_link}"/>
+            <td th:text="${wish.wish_name}" style="background-color: #6a5db8;color:white;"/>
+            <td th:text="${wish.wish_desc}" style="background-color: #6a5db8;color:white;"/>
+            <td th:text="${wish.wish_price}" style="background-color: #6a5db8;color:white;"/>
+            <td th:text="${wish.wish_link}" style="background-color: #6a5db8;color:white;"/>
         </tr>
         </tbody>
     </table>
