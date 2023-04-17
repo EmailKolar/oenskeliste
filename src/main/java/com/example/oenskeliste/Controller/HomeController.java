@@ -136,16 +136,24 @@ public class HomeController {
         return "home/showMyLists";
     }
     @GetMapping("/editWishlist/{list_id}")
-    public String editWishlist(@PathVariable("list_id")int list_id, HttpSession session, Model model){
-        System.out.println(list_id);
+    public String editWishlist(@PathVariable("list_id")int list_id, Model model, HttpSession session){
+
+        session.getAttribute("user");
+
+
 
         WList wList = WListService.fetchListForName(list_id);
         model.addAttribute("list_name",wList.getList_name());
 
         List<Wish> wishes = wishService.fetchList(list_id);
         model.addAttribute("wishes",wishes);
+
+        currentWList = wList;
+
         return "home/editList";
     }
+
+
 
     @PostMapping("/logOut")
     public String logOut(HttpSession session){
