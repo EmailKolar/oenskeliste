@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Log In</title>
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
 </head>
 <body>
-<div id="loginBox">
-    <form action="/login" method="post">
-        <label>enter username</label>
-        <input type="text" name="user_name">
-        <label>enter password</label>
-        <input type="text" name="password">
-        <input type="submit" value="log in">
+<h1>Log In</h1>
+<div class="button-container" id="register-form-styling">
+    <form style="background-color:#6a5db8 " action="/login" method="post">
+        <label class="form-label-styling">Enter username:</label>
+        <input type="text" name="user_name" style="margin-bottom: 6px;">
+        <br>
+        <label class="form-label-styling">Enter password:</label>
+        <input style="margin-left: 4px" type="text" name="password">
+        <br>
+        <input style="float: left" class="register-button" type="submit" value="Log in">
     </form>
 </div>
-
 </body>
 </html>
