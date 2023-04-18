@@ -41,6 +41,7 @@ public class HomeController {
     public String goToRegisterPage(){
         return "home/register";
     }
+
     @PostMapping("/loginbutton")
     public String goToLoginPage(){
         return "home/login";
@@ -52,16 +53,14 @@ public class HomeController {
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute User user, HttpSession session){//TODO måske ikke login ved register
+    public String register(@ModelAttribute User user, HttpSession session){
         if(userService.register(user)){
-            user = userService.setLoggedInUser(user);
-            session.setAttribute("user",user);
+            user = userService.setLoggedInUser(user); //Hvis registreringen er vellykket, sætter den brugeren som
+            session.setAttribute("user",user);     //den aktive bruger ved hjælp af userService.setLoggedInUser(user).
             return "home/loggedIn";
         }else {
             return "home/errorPage";
         }
-
-
     }
     @PostMapping("/login")
     public String login(@ModelAttribute User user, HttpSession httpSession){

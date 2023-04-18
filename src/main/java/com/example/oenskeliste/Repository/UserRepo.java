@@ -14,8 +14,10 @@ public class UserRepo {
 
     @Autowired
     JdbcTemplate template;
+
     public boolean register(User user) {
         if(!UserExist(user)){
+            //Hvis bruger ikke eksisterer: opret bruger + return true Hvis bruger eksisterer: return false
             String sql = "INSERT INTO wishlist.user (user_id, user_name, password) " +
                     "VALUES (?, ?, ?)";
             template.update(sql, user.getUser_id(), user.getUser_name(), user.getPassword());
@@ -55,5 +57,4 @@ public class UserRepo {
         System.out.println(loggedInUser.getUser_id() + loggedInUser.getUser_name());
         return loggedInUser;
     }
-
 }
