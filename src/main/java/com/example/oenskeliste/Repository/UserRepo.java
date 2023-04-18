@@ -52,7 +52,6 @@ public class UserRepo {
         String sql = "SELECT * FROM wishlist.user WHERE user_name = ? AND password =?";
         RowMapper<User> rm = new BeanPropertyRowMapper<>(User.class);
         User loggedInUser = template.queryForObject(sql,rm,user.getUser_name(),user.getPassword());
-        System.out.println(loggedInUser.getUser_id() + loggedInUser.getUser_name());
         return loggedInUser;
     }
 
