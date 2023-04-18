@@ -87,9 +87,11 @@ public class HomeController {
     public String createList(@ModelAttribute WList WList, HttpSession session, Model model){
         User user = (User) session.getAttribute("user");
 
+        //opretter ønskelisten i databasen:
         WListService.createList(user, WList);
         currentWList = WListService.setCurrentList(WList,user);
 
+        //henter navnet på ønskelisten fra DB så det kan displayes for brugeren:
         WList wListForName = WListService.fetchListForName(currentWList.getList_id());
         model.addAttribute("list_name",wListForName.getList_name());
 
@@ -98,15 +100,21 @@ public class HomeController {
 
     @PostMapping("/addWish")
     public String addWish(@ModelAttribute Wish wish, Model model, HttpSession session){
+        //henter user_id fra sessionen og tilføjer det til ønsket:
         User user = (User) session.getAttribute("user");
         wish.setUser_id(user.getUser_id());
 
+        //setter list_id på ønsket:
         wish.setList_id(currentWList.getList_id());
+
+        //tilføjer ønsket til DB
         wishService.addWish(wish);
 
+        //tilføjer ønskerne fra DB til model så det kan displayes på html'en
         List<Wish> wishes = wishService.fetchList(currentWList.getList_id());
         model.addAttribute("wishes",wishes);
 
+        //henter navnet fra listen på DB så det kan displayes
         WList wList = WListService.fetchListForName(currentWList.getList_id());
         model.addAttribute("list_name",wList.getList_name());
 
